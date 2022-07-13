@@ -1,20 +1,18 @@
 <style>
-  /* https://yeun.github.io/open-color/ */
-  /* https://colordrop.io/color/17671 */
   :root {
+    --a: #005aff; /* "vivid blue" */
     --bg: #fff;
     --fg: #212529; /* https://yeun.github.io/open-color/ */
-    --a: #005aff; /* "vivid blue" */
-    --x: #d92680; /* https://github.com/chrisgrieser/shimmering-focus */
+    /*--x: #d92680; /* https://github.com/chrisgrieser/shimmering-focus */
 
-    --rem: 18px;
     --h1: 1.8em;
     --h2: 1.3em;
     --h3: 1.1em;
+    --rem: 18px;
     --small: 80%;
-    --line-height: 1.5;
 
     --text-width: 36rem;
+
     --left-margin: 1rem;
     --right-margin: 1rem;
 
@@ -45,12 +43,13 @@
 
     --h: var(--fg);
   }
+
   @media (prefers-color-scheme: dark) {
     :root {
+      --a: #42b5ff;
       --bg: #000;
       --fg: #f8f9fa; /* https://yeun.github.io/open-color/ */
-      --a: #42b5ff;
-      --x: #f15594; /* https://github.com/chrisgrieser/shimmering-focus */
+      /*--x: #f15594; /* https://github.com/chrisgrieser/shimmering-focus */
     }
   }
   @media (min-width: 720px) {
@@ -65,86 +64,64 @@
       --right-margin: 4rem;
     }
   }
+
   @font-face {
+    font-display: swap;
     font-family: 'ccpl';
-    src: url('/assets/CascadiaCodePL-Regular.woff2') format('woff2');
     font-weight: normal;
-    font-display: swap;
+    src: url('/assets/CascadiaCodePL-Regular.woff2') format('woff2');
   }
   @font-face {
+    font-display: swap;
     font-family: 'ccpl';
+    font-weight: bold;
     src: url('/assets/CascadiaCodePL-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-display: swap;
   }
   @font-face {
+    font-display: swap;
     font-family: 'ccpl';
+    font-style: italic;
     src: url('/assets/CascadiaCodePL-Italic.woff2') format('woff2');
-    font-style: italic;
-    font-display: swap;
   }
   @font-face {
-    font-family: 'ccpl';
-    src: url('/assets/CascadiaCodePL-BoldItalic.woff2') format('woff2');
-    font-weight: bold;
-    font-style: italic;
     font-display: swap;
+    font-family: 'ccpl';
+    font-style: italic;
+    font-weight: bold;
+    src: url('/assets/CascadiaCodePL-BoldItalic.woff2') format('woff2');
   }
+
   html {
     font-size: var(--rem);
   }
   body {
-    font-family: var(--sans);
     background-color: var(--bg);
     color: var(--fg);
+    font-family: var(--sans);
     text-rendering: optimizeLegibility;
   }
-  nav {
-    font-family: var(--mono);
-    margin-left: var(--left-margin);
-    margin-right: var(--right-margin);
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-  article > *:not(article),
-  section > *:not(article),
-  footer > p {
-    max-width: var(--text-width);
-    margin-left: var(--left-margin);
-    margin-right: var(--right-margin);
-  }
-  article img, section img {
-    max-width: 100%;
-    height: auto;
-  }
-  p.o7x, footer > p {
-    font-family: var(--mono);
-    font-size: var(--small);
-    text-align: left;
-  }
-  p.o7x { /* attribution paragraph */
-    margin-top: 3rem;
-  }
-  footer {
-    margin-bottom: 4.5rem;
-  }
-  footer a {
-    font-weight: bold;
-  }
+
   p, ul {
-    line-height: var(--line-height);
+    line-height: 1.5;
+  }
+  @media (min-width: 565px) {
+    p {
+      -webkit-hyphens: auto;
+      hyphens: auto;
+      text-align: justify;
+    }
   }
   h1 {
-    font-size: var(--h1);
     color: var(--h);
+    font-size: var(--h1);
   }
   h2 {
-    font-size: var(--h2);
     color: var(--h);
+    font-size: var(--h2);
   }
   h3, h4, h5, h6 {
-    font-size: var(--h3);
     color: var(--h);
+    font-size: var(--h3);
   }
   a, a:visited {
     color: var(--a);
@@ -156,16 +133,45 @@
   code, kbd, samp, pre {
     font-family: var(--mono);
   }
+
+  nav {
+    font-family: var(--mono);
+    margin-bottom: 3rem;
+    margin-left: var(--left-margin);
+    margin-right: var(--right-margin);
+    margin-top: 3rem;
+  }
+
+  article > *:not(article),
+  section > *:not(article),
+  footer > p {
+    margin-left: var(--left-margin);
+    margin-right: var(--right-margin);
+    max-width: var(--text-width);
+  }
+  article img, section img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  p.o7x, footer > p {
+    font-family: var(--mono);
+    font-size: var(--small);
+    text-align: left;
+  }
+  p.o7x { /* attribution paragraph */
+    margin-top: 3rem;
+  }
   @media (min-width: 516px) {
     p.o7x, footer > p {
       text-align: center;
     }
   }
-  @media (min-width: 565px) {
-    p {
-      -webkit-hyphens: auto;
-      hyphens: auto;
-      text-align: justify;
-    }
+
+  footer {
+    margin-bottom: 4.5rem;
+  }
+  footer a {
+    font-weight: bold;
   }
 </style>
