@@ -5,6 +5,7 @@ _pages
 .DS_Store
 .obsidian
 .trash
+.vscode
 assets
 attachments
 comments
