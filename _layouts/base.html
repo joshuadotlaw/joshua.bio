@@ -75,7 +75,9 @@
 <footer>
   <p>
     {{- ''    -}}<a href="/feed.xml">RSS</a>
+    {%- unless page.homepage -%}
     {{- ' • ' -}}<a href="/">Homepage</a>
+    {%- endunless -%}
     {{- ' • ' -}}<a href="#top">Return to Top</a>
     {{- ' • ' -}}<a href="mailto:{{ site.email }}">{{ site.email }}</a>
     {{- ''    -}}
