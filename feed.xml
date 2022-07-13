@@ -1,0 +1,43 @@
+---
+permalink: '/feed.xml'
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>{{ site.name }}</title>
+{% assign sorted = site.pages | where:'index',true | reverse -%}
+{% for i in sorted limit:1 -%}
+<updated>{{ i.last_modified_at | date_to_xmlschema }}</updated>
+{% endfor -%}
+<id>{{ site.url }}/</id>
+<link rel="self" href="{{ site.url }}/feed.xml"/>
+<link rel="alternate" href="{{ site.url }}/pages"/>
+<author>
+    <name>{{ site.author }}</name>
+    <email>{{ site.email }}</email>
+    <uri>{{ site.url }}</uri>
+</author>
+{% for i in sorted limit:1 -%}
+<rights>© {{ i.last_modified_at | date: "%Y" }} {{ site.author }}</rights>
+{% endfor -%}
+{% for i in sorted -%}
+<entry>
+    <title>{{ i.title }}</title>
+    <id>{{ i.url | absolute_url }}</id>
+    <link rel="alternate" href="{{ i.url | absolute_url }}"/>
+    <updated>{{ i.last_modified_at | date_to_xmlschema }}</updated>
+    <content type="html">
+        <![CDATA[
+        {{ i.content | markdownify }}
+        <p>
+            {%- if i.last_modified_at %}Last updated on {{ i.last_modified_at }}{{' • '}}
+            {%- endif -%} Written by <a href="{{ site.url }}">{{ site.author | replace: " ", " " }}</a>
+            {{- '<br />' -}} Permalink: <a href="{% if i.homepage %}{{ site.url }}{% else %}{{ i.url | absolute_url }}{% endif %}">
+                {%- if i.homepage %}{{ site.url }}{% else %}{{ i.url | absolute_url }}{% endif -%}
+            {{- '</a>' -}}
+        </p>
+        ]]>
+    </content>
+</entry>
+{% endfor -%}
+</feed>

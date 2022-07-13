@@ -1,0 +1,165 @@
+<style>
+  /* https://yeun.github.io/open-color/ */
+  /* https://colordrop.io/color/17671 */
+  :root {
+    --bg: #fff;
+    --fg: #212529; /* https://yeun.github.io/open-color/ */
+    --a: #005aff; /* "vivid blue" */
+    --x: #d92680; /* https://github.com/chrisgrieser/shimmering-focus */
+
+    --rem: 18px;
+    --h1: 1.8em;
+    --h2: 1.3em;
+    --h3: 1.1em;
+    --small: 80%;
+    --line-height: 1.5;
+
+    --text-width: 36rem;
+    --left-margin: 1rem;
+    --right-margin: 1rem;
+
+    --sans:
+    system-ui,
+    -apple-system,
+    Roboto,
+    'Segoe UI',
+    Ubuntu,
+    'Oxygen Sans',
+    'Liberation Sans',
+    'Helvetica Neue',
+    'Helvetica',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
+
+    --mono:
+    'ccpl',
+    ui-monospace,
+    'Segoe UI Mono',
+    'Roboto Mono',
+    'Ubuntu Monospace',
+    'Liberation Mono',
+    Menlo,
+    monospace;
+
+    --h: var(--fg);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000;
+      --fg: #f8f9fa; /* https://yeun.github.io/open-color/ */
+      --a: #42b5ff;
+      --x: #f15594; /* https://github.com/chrisgrieser/shimmering-focus */
+    }
+  }
+  @media (min-width: 40rem) {
+    :root {
+      --left-margin: 2rem;
+      --right-margin: 2rem;
+    }
+  }
+  @media (min-width: 44rem) {
+    :root {
+      --left-margin: 4rem;
+      --right-margin: 4rem;
+    }
+    p {
+      -webkit-hyphens: auto;
+      hyphens: auto;
+      text-align: justify;
+    }
+  }
+  @font-face {
+    font-family: 'ccpl';
+    src: url('/assets/CascadiaCodePL-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'ccpl';
+    src: url('/assets/CascadiaCodePL-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'ccpl';
+    src: url('/assets/CascadiaCodePL-Italic.woff2') format('woff2');
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'ccpl';
+    src: url('/assets/CascadiaCodePL-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+  html {
+    font-size: var(--rem);
+  }
+  body {
+    font-family: var(--sans);
+    background-color: var(--bg);
+    color: var(--fg);
+    text-rendering: optimizeLegibility;
+  }
+  nav {
+    font-family: var(--mono);
+    margin-left: var(--left-margin);
+    margin-right: var(--right-margin);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  article > *:not(article),
+  section > *:not(article),
+  footer > p {
+    max-width: var(--text-width);
+    margin-left: var(--left-margin);
+    margin-right: var(--right-margin);
+  }
+  article img, section img {
+    max-width: 100%;
+    height: auto;
+  }
+  p.o7x { /* attribution paragraph */
+    font-family: var(--mono);
+    font-size: var(--small);
+    margin-top: 3rem;
+  }
+  footer {
+    margin-bottom: 4.5rem;
+    font-family: var(--mono);
+  }
+  footer > p {
+    font-size: var(--small);
+  }
+  footer a {
+    font-weight: bold;
+  }
+  p, ul {
+    line-height: var(--line-height);
+  }
+  h1 {
+    font-size: var(--h1);
+    color: var(--h);
+  }
+  h2 {
+    font-size: var(--h2);
+    color: var(--h);
+  }
+  h3, h4, h5, h6 {
+    font-size: var(--h3);
+    color: var(--h);
+  }
+  a, a:visited {
+    color: var(--a);
+    text-decoration: none;
+  }
+  a:hover {
+    filter: brightness(1.4);
+  }
+  code, kbd, samp, pre {
+    font-family: var(--mono);
+  }
+</style>

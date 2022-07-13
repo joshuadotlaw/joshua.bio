@@ -1,0 +1,67 @@
+# Welcome to Jekyll!
+
+name: "joshua.bio"
+author: "Joshua F. Gonzales"
+email: "j@joshua.bio"
+twitter_name: "@joshuadotbio"
+url: "https://joshua.bio"
+locale: "en_US"
+timezone: "America/Los_Angeles"
+strict_front_matter: true
+permalink: "/:title"
+exclude:
+  - "attachments"
+  - "comments"
+  - "logs"
+  - "notes"
+  - "templates"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - ".obsidian"
+  - ".trash"
+  - ".git"
+  - ".gitignore"
+  - ".jekyll-cache"
+  - "stacks.code-workspace"
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "article"
+      index: true
+collections:
+  pages:
+    output: true
+    sort_by: 'last_modified_at'
+plugins:
+  - "jekyll-minifier"
+  - "jekyll-wikilinks"
+  - "jekyll-sitemap"
+markdown: "kramdown"
+highlighter: "rouge"
+kramdown:
+  input: "GFM"
+  syntax_highlighter: "rouge"
+jekyll-minifier:
+  preserve_php: true
+  remove_spaces_inside_tags: false
+  remove_multi_spaces: false
+  remove_comments: true
+  remove_intertag_spaces: false
+  remove_quotes: false
+  compress_css: true
+  compress_javascript: true
+  compress_json: false
+  simple_doctype: false
+  remove_script_attributes: false
+  remove_style_attributes: false
+  remove_link_attributes: false
+  remove_form_attributes: false
+  remove_input_attributes: false
+  remove_javascript_protocol: false
+  remove_http_protocol: false
+  remove_https_protocol: false
+  preserve_line_breaks: true
+  simple_boolean_attributes: false
+  compress_js_templates: false

@@ -1,0 +1,1 @@
+These are the Jekyll files for my personal website, without any of the content.

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="{% if page.homepage %}{{ site.url }}/{% else %}{{ page.url | absolute_url }}{% endif %}">
+<link rel="preload" href="/assets/CascadiaCodePL-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/CascadiaCodePL-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<title>{{ page.title }}</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title }}",
+  {% if page.og_image -%}
+  "image": "{{ page.og_image }}",
+  {% endif -%}
+  {% if page.last_modified_at -%}
+  "dateModified": "{{ page.last_modified_at }}",
+  {% endif -%}
+  "author": [{
+    "@type": "Person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}",
+    "email": "{{ site.email }}"
+  }]
+}
+</script>
+<meta name="description" content="{{ page.description }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{% if page.og_image -%}
+<meta property="og:image" content="{{ page.og_image }}">
+<meta property="og:image:alt" content="{{ page.og_image_alt }}">
+<meta name="twitter:image" content="{{ page.og_image }}">
+<meta name="twitter:image:alt" content="{{ page.og_image_alt }}">
+{% endif -%}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="{{ page.url | absolute_url }}">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<meta name="twitter:dnt" content="on">
+{% if page.homepage -%}
+<meta name="google-site-verification" content="wBVVBNSKwaye656DKGynPIypZKnmFibnQW1uAnOBdHQ" />
+<meta name="yandex-verification" content="686032b81554cfa1" />
+{% endif -%}
+<link rel="alternate" href="{{ site.url }}/feed.xml" type="application/atom+xml" title="{{ site.name }}">
+<link rel="apple-touch-icon" href="/assets/emoji-j-192.png">
+<link rel="icon" href="/assets/emoji-j-228.png" sizes="228x228" type="image/png">
+<link rel="icon" href="/assets/emoji-j-192.png" sizes="192x192" type="image/png">
+<link rel="icon" href="/assets/emoji-j-180.png" sizes="180x180" type="image/png">
+<link rel="icon" href="/assets/emoji-j-152.png" sizes="152x152" type="image/png">
+<link rel="icon" href="/assets/emoji-j-120.png" sizes="120x120" type="image/png">
+<link rel="icon" href="/assets/emoji-j-76.png" sizes="76x76" type="image/png">
+<link rel="icon" href="/assets/emoji-j-64.png" sizes="64x64" type="image/png">
+<link rel="icon" href="/assets/emoji-j-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/assets/emoji-j-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/emoji-j-16.png" sizes="16x16" type="image/png">
+{% include normalize.html %}
+{% include styles.html %}
+</head>
+<body>
+<nav>
+  {{- ''    -}}<strong><a href="/">{{ site.name }}</a></strong>
+  {{- ' / ' -}}<a href="/pages">pages</a>
+  {{- ''    -}}
+</nav>
+<main>
+  {{ content }}
+</main>
+<footer>
+  <p>
+    {{- ''    -}}<a href="/feed.xml">RSS</a>
+    {{- ' • ' -}}<a href="/">Homepage</a>
+    {{- ' • ' -}}<a href="#top">Return to Top</a>
+    {{- ' • ' -}}<a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    {{- ''    -}}
+  </p>
+</footer>
+</body>
+</html>

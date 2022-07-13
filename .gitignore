@@ -1,0 +1,12 @@
+_site
+_pages
+.jekyll-cache
+.jekyll-metadata
+.DS_Store
+.obsidian
+.trash
+assets
+attachments
+comments
+logs
+notes

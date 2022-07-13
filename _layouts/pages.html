@@ -1,0 +1,34 @@
+---
+layout: section
+---
+{{ content }}
+{% assign sorted = site.pages | where:'index',true | reverse -%}
+{% for i in sorted -%}
+<article>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ i.title }}",
+    {% if i.og_image -%}
+    "image": "{{ i.og_image }}",
+    {% endif -%}
+    {% if i.last_modified_at -%}
+    "dateModified": "{{ i.last_modified_at }}",
+    {% endif -%}
+    "author": [{
+        "@type": "Person",
+        "name": "{{ site.author }}",
+        "url": "{{ site.url }}",
+        "email": "{{ site.email }}"
+    }]
+}
+</script>
+<p>
+    {{- '' -}}<small>Updated on <time>{{ i.last_modified_at }}</time></small>
+    {{- '' -}}<br />
+    {{- '' -}}<strong><a href="{{ i.url }}">{% if i.list_title %}{{ i.list_title }}{% else %}{{ i.title }}{% endif %}</a></strong>
+    {{- ' — ' -}}{{ i.description -}}
+</p>
+</article>
+{% endfor -%}
