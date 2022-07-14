@@ -14,8 +14,10 @@
 
     --text-width: 36rem;
 
-    --left-margin: 1rem;
-    --right-margin: 1rem;
+    --left-margin: 18px;
+    --right-margin: 18px;
+    --vertical-margin: 54px;
+    --bottom-margin: 162px;
 
     --sans:
     system-ui,
@@ -53,14 +55,14 @@
   }
   @media (min-width: 720px) {
     :root {
-      --left-margin: 2rem;
-      --right-margin: 2rem;
+      --left-margin: 36px;
+      --right-margin: 36px;
     }
   }
   @media (min-width: 792px) {
     :root {
-      --left-margin: 4rem;
-      --right-margin: 4rem;
+      --left-margin: 72px;
+      --right-margin: 72px;
     }
   }
   @font-face {
@@ -134,8 +136,8 @@
 
   header {
     font-family: var(--mono);
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+    margin-bottom: var(--vertical-margin);
+    margin-top: var(--vertical-margin);
   }
   header nav p > a:not(:first-child) {
     margin-left: 1.5em;
@@ -159,7 +161,7 @@
     text-align: left;
   }
   p.o7x { /* attribution paragraph */
-    margin-top: 3rem;
+    margin-top: var(--vertical-margin);
   }
   @media (min-width: 516px) {
     p.o7x, footer p {
@@ -167,7 +169,7 @@
     }
   }
   footer {
-    margin-bottom: 4.5rem;
+    margin-bottom: var(--bottom-margin);
   }
   footer nav a {
     font-weight: bold;
