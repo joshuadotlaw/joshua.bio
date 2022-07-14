@@ -64,28 +64,34 @@
 {% include styles.html %}
 </head>
 <body>
-<nav>
-  {{- ''    -}}<strong><a href="/">{{ site.name }}</a></strong>
-  {{- ' / ' -}}<a href="/pages">pages</a>
-  {{- ''    -}}
-</nav>
+  <header>
+    <nav>
+      <p>
+          {{- ''    -}}<strong><a href="/">{{ site.name }}</a></strong>
+          {{- ' / ' -}}<a href="/pages">pages</a>
+          {{- ''    -}}
+      </p>
+    </nav>
+  </header>
 <main>
   {{ content }}
 </main>
 <footer>
   <p>+++</p>
-  <p>
-    {{-''-}}
-    <a href="/feed.xml">RSS</a>{{-' • '-}}
-    {%- unless page.permalink == "/" -%}
-    <a href="/">Home</a>{{-' • '-}}
-    {%- endunless -%}
-    {%- unless page.permalink == "/pages" -%}
-    <a href="/pages">Pages</a>{{-' • '-}}
-    {%- endunless -%}
-    <a href="#top">Return to Top</a>
-    {{-''-}}
-  </p>
+  <nav>
+    <p>
+        {{-''-}}
+        <a href="/feed.xml">RSS</a>{{-' • '-}}
+        {%- unless page.permalink == "/" -%}
+        <a href="/">Home</a>{{-' • '-}}
+        {%- endunless -%}
+        {%- unless page.permalink == "/pages" -%}
+        <a href="/pages">Pages</a>{{-' • '-}}
+        {%- endunless -%}
+        <a href="#top">Return to Top</a>
+        {{-''-}}
+    </p>
+  </nav>
   <p>
     {{-''-}}
     <a href="mailto:{{ site.email }}">MailTo:</a>{{ site.email }}
