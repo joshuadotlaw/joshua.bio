@@ -17,12 +17,6 @@ exclude:
   - "templates"
   - "Gemfile"
   - "Gemfile.lock"
-  - ".obsidian"
-  - ".trash"
-  - ".git"
-  - ".gitignore"
-  - ".jekyll-cache"
-  - "stacks.code-workspace"
 defaults:
   -
     scope:
