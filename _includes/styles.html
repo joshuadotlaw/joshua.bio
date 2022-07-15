@@ -2,7 +2,7 @@
   /*!
 
   The Cascadia Code PL Font Software is used herein subject to
-  the following copyright and license.
+  the following copyright notice and license.
 
   Copyright (c) 2019 - Present, Microsoft Corporation,
   with Reserved Font Name Cascadia Code.
@@ -75,6 +75,7 @@
       --right-margin: 72px;
     }
   }
+
   @font-face {
     font-display: swap;
     font-family: 'ccpl';
@@ -103,12 +104,19 @@
 
   html {
     font-size: var(--rem);
+    /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
+    -moz-tab-size: 4;
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.15;
+    tab-size: 4;
   }
   body {
     background-color: var(--bg);
     color: var(--fg);
     font-family: var(--sans);
     text-rendering: optimizeLegibility;
+    /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
+    margin: 0;
   }
 
   p, ul {
@@ -140,8 +148,32 @@
   a:hover {
     filter: brightness(1.4);
   }
+  small {
+    font-size: var(--small);
+  }
   code, kbd, samp, pre {
     font-family: var(--mono);
+    /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
+    font-size: 1em;
+  }
+  strong {
+    /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
+    font-weight: bolder;
+  }
+  sub, sup {
+    /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
+    bottom: -0.25em;
+  }
+  sup {
+    /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
+    top: -0.5em;
   }
 
   header {
