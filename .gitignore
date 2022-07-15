@@ -2,5 +2,5 @@
 .*
 !_*/
 !templates/
-_site/
-_pages/
+_site
+_pages
