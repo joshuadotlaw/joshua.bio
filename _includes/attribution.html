@@ -1,12 +1,12 @@
 <p class="o7x">
 {%- if page.index -%}
-Last updated {{ page.last_modified_at }}{{-' • '-}}
+Last updated {{ page.last_modified_at }}{{-'. '-}}
 {%- endif -%}
-Written by <a href="{{ site.url }}">{{ site.author | replace:" "," " }}</a>
+Written by <a href="{{ site.url }}">{{ site.author | replace:" "," " }}</a>.
 {{-'<br />'-}}
 Permalink:{{-' '-}}
-<a href="{% if page.homepage %}{{ site.url }}{% else %}{{ page.url | absolute_url }}{% endif %}">
-    {%- if page.homepage %}{{ site.url }}{% else %}{{ page.url | absolute_url }}{% endif -%}
+<a href="{% if page.url == "/" %}{{ site.url }}{% else %}{{ page.url | absolute_url }}{% endif %}">
+    {%- if page.url == "/" %}{{ site.url }}{% else %}{{ page.url | absolute_url }}{% endif -%}
 </a>
 {{-''-}}
 </p>
