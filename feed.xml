@@ -30,8 +30,8 @@ layout: null
         <![CDATA[
         {{ i.content | markdownify }}
         <p>
-            {%- if i.last_modified_at %}Last updated on {{ i.last_modified_at }}{{' • '}}
-            {%- endif -%} Written by <a href="{{ site.url }}">{{ site.author | replace: " ", " " }}</a>
+            {%- if i.last_modified_at %}Last updated on {{ i.last_modified_at }}{{'. '}}
+            {%- endif -%} Written by <a href="{{ site.url }}">{{ site.author | replace: " ", " " }}</a>.
             {{- '<br />' -}} Permalink: <a href="{% if i.homepage %}{{ site.url }}{% else %}{{ i.url | absolute_url }}{% endif %}">
                 {%- if i.homepage %}{{ site.url }}{% else %}{{ i.url | absolute_url }}{% endif -%}
             {{- '</a>' -}}
