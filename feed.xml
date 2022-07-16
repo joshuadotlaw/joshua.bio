@@ -28,7 +28,7 @@ layout: null
     <updated>{{ i.last_modified_at | date_to_xmlschema }}</updated>
     <content type="html">
         <![CDATA[
-        {{ i.content | markdownify }}
+        {{ i.content | markdownify -}}
         <p>
             {%- if i.last_modified_at %}Last updated on {{ i.last_modified_at }}{{'. '}}
             {%- endif -%} Written by <a href="{{ site.url }}">{{ site.author | replace: " ", " " }}</a>.
