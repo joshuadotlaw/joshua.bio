@@ -19,10 +19,10 @@
     --h1: 1.8em;
     --h2: 1.3em;
     --h3: 1.1em;
-    --rem: 18px;
+    --rem: 19px;
     --small: 80%;
 
-    --text-width: 36rem;
+    --text-width: 34rem;
 
     --left-margin: 18px;
     --right-margin: 18px;
@@ -44,6 +44,14 @@
     'Apple Color Emoji',
     'Segoe UI Emoji';
 
+    --serif:
+    ui-serif,
+    'Iowan Old Style',
+    'Roboto Serif',
+    Cambria,
+    Georgia,
+    serif;
+
     --mono:
     'ccpl',
     ui-monospace,
@@ -53,6 +61,9 @@
     'Liberation Mono',
     Menlo,
     monospace;
+
+    --body-font: var(--serif);
+    --nav-font: var(--serif);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -113,7 +124,7 @@
   body {
     background-color: var(--bg);
     color: var(--fg);
-    font-family: var(--sans);
+    font-family: var(--body-font);
     text-rendering: optimizeLegibility;
     /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
     margin: 0;
@@ -140,6 +151,24 @@
   h3, h4, h5, h6 {
     color: var(--h);
     font-size: var(--h3);
+  }
+  hr {
+    border: none;
+    margin-block: 2em;
+    overflow: visible;
+    padding: 0;
+    text-align: center;
+    /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
+    color: inherit;
+    height: 0;
+  }
+  hr:after {
+    content: "</>";
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 1.25em;
+    position: relative;
+    top: -0.6em;
   }
   a, a:visited {
     color: var(--a);
@@ -177,7 +206,7 @@
   }
 
   header {
-    font-family: var(--mono);
+    font-family: var(--nav-font);
     margin-bottom: var(--vertical-margin);
     margin-top: var(--vertical-margin);
   }
@@ -187,7 +216,7 @@
 
   article > *:not(article),
   section > *:not(article),
-  header p, footer p {
+  header > *, footer > * {
     margin-left: var(--left-margin);
     margin-right: var(--right-margin);
     max-width: var(--text-width);
@@ -198,7 +227,7 @@
   }
 
   p.o7x, footer {
-    font-family: var(--mono);
+    font-family: var(--nav-font);
     font-size: var(--small);
     text-align: left;
   }
@@ -215,5 +244,8 @@
   }
   footer nav a {
     font-weight: bold;
+  }
+  footer hr:after {
+    content: ':::';
   }
 </style>
