@@ -2,7 +2,7 @@
 {%- if page.index -%}
 Last updated {{ page.last_modified_at }}{{-' • '-}}
 {%- endif -%}
-Written by <a href="{{ site.url }}">{{ site.author }}</a>
+Written by <a href="{{ site.url }}">{{ site.author | replace:" "," " }}</a>
 {{-'<br />'-}}
 Permalink:{{-' '-}}
 <a href="{% if page.homepage %}{{ site.url }}{% else %}{{ page.url | absolute_url }}{% endif %}">
