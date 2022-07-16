@@ -1,6 +1,6 @@
 <p class="o7x">
 {%- if page.listed -%}
-Last updated {{ page.last_modified_at }}{{-'. '-}}
+Last updated {{ page.last_modified_at | date:"%e %B %Y" }}{{-'. '-}}
 {%- endif -%}
 Written by <a href="{{ site.url }}">{{ site.author | replace:" "," " }}</a>.
 {{-'<br />'-}}
