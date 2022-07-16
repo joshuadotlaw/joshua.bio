@@ -23,6 +23,7 @@ defaults:
       path: ""
     values:
       layout: "article"
+      listed: true
       index: true
 collections:
   pages:

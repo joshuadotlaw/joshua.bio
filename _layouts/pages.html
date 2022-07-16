@@ -2,7 +2,7 @@
 layout: section
 ---
 {{ content }}
-{% assign sorted = site.pages | where:'index',true | reverse -%}
+{% assign sorted = site.pages | where:'listed',true | reverse -%}
 {% for i in sorted -%}
 <article>
 <script type="application/ld+json">
