@@ -5,7 +5,7 @@ layout: null
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>{{ site.name }}</title>
-{% assign sorted = site.pages | where:'index',true | reverse -%}
+{% assign sorted = site.pages | where:'listed',true | reverse -%}
 {% for i in sorted limit:1 -%}
 <updated>{{ i.last_modified_at | date_to_xmlschema }}</updated>
 {% endfor -%}
