@@ -24,7 +24,7 @@ defaults:
     values:
       layout: "article"
       listed: true
-      index: true
+      sitemap: true
 collections:
   pages:
     output: true
