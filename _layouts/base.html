@@ -81,7 +81,6 @@
   <nav aria-label="footer-navigation">
     <p>
         {{-''-}}
-        <a href="/feed.xml">RSS</a>{{-' • '-}}
         {%- unless page.permalink == "/" -%}
         <a href="/">Home</a>{{-' • '-}}
         {%- endunless -%}
@@ -89,8 +88,10 @@
         <a href="/pages">Pages</a>{{-' • '-}}
         {%- endunless -%}
         {%- unless page.permalink == "/now" -%}
-        <a href="/now">Now</a>
+        <a href="/now">Now</a>{{-' • '-}}
         {%- endunless -%}
+        <a href="/feed.xml">RSS</a>
+        {{-''-}}
     </p>
     <p>
       {{-''-}}
