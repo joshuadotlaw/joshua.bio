@@ -34,10 +34,10 @@ plugins:
   - "jekyll-wikilinks"
   - "jekyll-sitemap"
 markdown: "kramdown"
-highlighter: "rouge"
+highlighter: ""
 kramdown:
   input: "GFM"
-  syntax_highlighter: "rouge"
+  syntax_highlighter: ""
 jekyll-minifier:
   preserve_php: true
   remove_spaces_inside_tags: false
