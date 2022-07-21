@@ -12,7 +12,9 @@ Open Font License, Version 1.1.
   :root {
     --a: #005aff; /* "vivid blue" */
     --bg: #fff;
+    --bg-alt: #e9ecef; /* https://yeun.github.io/open-color/ */
     --fg: #212529; /* https://yeun.github.io/open-color/ */
+    --fg-alt: #d6336c;
     --h: var(--fg);
     /*--x: #d92680; /* https://github.com/chrisgrieser/shimmering-focus */
 
@@ -20,7 +22,8 @@ Open Font License, Version 1.1.
     --h2: 1.3em;
     --h3: 1.1em;
     --rem: 19px;
-    --small: 80%;
+    --code: 16px;
+    --small: 16px;
 
     --text-width: 34rem;
 
@@ -64,12 +67,13 @@ Open Font License, Version 1.1.
     Menlo,
     monospace;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
       --a: #42b5ff;
       --bg: #000;
-      --fg: #f8f9fa; /* https://yeun.github.io/open-color/ */
+      --bg-alt: #343a40;
+      --fg: #dee2e6; /* https://yeun.github.io/open-color/ */
+      --fg-alt: #f06595;
       /*--x: #f15594; /* https://github.com/chrisgrieser/shimmering-focus */
     }
   }
@@ -114,11 +118,11 @@ Open Font License, Version 1.1.
 
   html {
     font-size: var(--rem);
+    -moz-tab-size: 2;
+    tab-size: 2;
     /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
-    -moz-tab-size: 4;
     -webkit-text-size-adjust: 100%;
     line-height: 1.15;
-    tab-size: 4;
   }
   body {
     background-color: var(--bg);
@@ -134,6 +138,9 @@ Open Font License, Version 1.1.
     hyphens: auto;
     line-height: 1.5;
     text-align: justify;
+  }
+  blockquote > p {
+    padding-left: var(--left-margin);
   }
   h1 {
     color: var(--h);
@@ -171,6 +178,20 @@ Open Font License, Version 1.1.
     position: relative;
     top: -0.6em;
   }
+  pre {
+    background: var(--bg-alt);
+    border-radius: 0.5rem;
+    margin-block: 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
+  }
+  pre > code {
+    color: var(--fg);
+    display: block;
+    padding: 1rem;
+  }
+
   a, a:visited {
     color: var(--a);
     text-decoration: none;
@@ -182,9 +203,9 @@ Open Font License, Version 1.1.
     font-size: var(--small);
   }
   code, kbd, samp, pre {
+    color: var(--fg-alt);
     font-family: var(--mono);
-    /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
-    font-size: 1em;
+    font-size: var(--code);
   }
   strong {
     /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
