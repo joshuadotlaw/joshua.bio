@@ -26,8 +26,9 @@ Open Font License, Version 1.1.
 
     --left-margin: 1rem;
     --right-margin: 1rem;
-    --vertical-margin: 3rem;
-    --bottom-margin: 9rem;
+    --nav-margin: 3rem;
+    --h1-margin: 4.5rem;
+    --floor-margin: 9rem;
 
     /*--sans:
     system-ui,
@@ -138,19 +139,19 @@ Open Font License, Version 1.1.
     color: var(--h);
     font-size: var(--h1);
     margin-block-end: 1rem;
-    margin-block-start: var(--vertical-margin);
+    margin-block-start: var(--h1-margin);
   }
   h2 {
     color: var(--h);
     font-size: var(--h2);
     margin-block-end: 1rem;
-    margin-block-start: var(--vertical-margin);
+    margin-block-start: var(--h1-margin);
   }
   h3, h4, h5, h6 {
     color: var(--h);
     font-size: var(--h3);
     margin-block-end: 1rem;
-    margin-block-start: var(--vertical-margin);
+    margin-block-start: 3rem;
   }
   hr {
     border: none;
@@ -206,8 +207,8 @@ Open Font License, Version 1.1.
   }
 
   header {
-    margin-bottom: var(--vertical-margin);
-    margin-top: var(--vertical-margin);
+    margin-bottom: var(--h1-margin);
+    margin-top: var(--nav-margin);
   }
   header nav p > a:not(:first-child) {
     margin-left: 1.5em;
@@ -230,10 +231,10 @@ Open Font License, Version 1.1.
     text-align: center;
   }
   p.o7x { /* attribution paragraph */
-    margin-top: var(--vertical-margin);
+    margin-block-start: var(--nav-margin);
   }
   footer {
-    margin-bottom: var(--bottom-margin);
+    margin-bottom: var(--floor-margin);
   }
   footer nav a {
     font-weight: bold;
