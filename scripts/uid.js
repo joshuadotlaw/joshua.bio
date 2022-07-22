@@ -1,8 +1,217 @@
-var ShortUniqueId=(()=>{var h=Object.defineProperty;var _=Object.getOwnPropertySymbols;var m=Object.prototype.hasOwnProperty,f=Object.prototype.propertyIsEnumerable;var g=(r,t,i)=>t in r?h(r,t,{enumerable:!0,configurable:!0,writable:!0,value:i}):r[t]=i,l=(r,t)=>{for(var i in t||(t={}))m.call(t,i)&&g(r,i,t[i]);if(_)for(var i of _(t))f.call(t,i)&&g(r,i,t[i]);return r};var I=r=>h(r,"__esModule",{value:!0});var U=(r,t)=>{I(r);for(var i in t)h(r,i,{get:t[i],enumerable:!0})};var y={};U(y,{DEFAULT_UUID_LENGTH:()=>d,default:()=>n});var b="4.4.4";var d=6,q={dictionary:"alphanum",shuffle:!0,debug:!1,length:d},p=class extends Function{constructor(t={}){super();this.dictIndex=0;this.dictRange=[];this.lowerBound=0;this.upperBound=0;this.dictLength=0;this._digit_first_ascii=48;this._digit_last_ascii=58;this._alpha_lower_first_ascii=97;this._alpha_lower_last_ascii=123;this._hex_last_ascii=103;this._alpha_upper_first_ascii=65;this._alpha_upper_last_ascii=91;this._number_dict_ranges={digits:[this._digit_first_ascii,this._digit_last_ascii]};this._alpha_dict_ranges={lowerCase:[this._alpha_lower_first_ascii,this._alpha_lower_last_ascii],upperCase:[this._alpha_upper_first_ascii,this._alpha_upper_last_ascii]};this._alpha_lower_dict_ranges={lowerCase:[this._alpha_lower_first_ascii,this._alpha_lower_last_ascii]};this._alpha_upper_dict_ranges={upperCase:[this._alpha_upper_first_ascii,this._alpha_upper_last_ascii]};this._alphanum_dict_ranges={digits:[this._digit_first_ascii,this._digit_last_ascii],lowerCase:[this._alpha_lower_first_ascii,this._alpha_lower_last_ascii],upperCase:[this._alpha_upper_first_ascii,this._alpha_upper_last_ascii]};this._alphanum_lower_dict_ranges={digits:[this._digit_first_ascii,this._digit_last_ascii],lowerCase:[this._alpha_lower_first_ascii,this._alpha_lower_last_ascii]};this._alphanum_upper_dict_ranges={digits:[this._digit_first_ascii,this._digit_last_ascii],upperCase:[this._alpha_upper_first_ascii,this._alpha_upper_last_ascii]};this._hex_dict_ranges={decDigits:[this._digit_first_ascii,this._digit_last_ascii],alphaDigits:[this._alpha_lower_first_ascii,this._hex_last_ascii]};this.log=(...t)=>{let i=[...t];if(i[0]=`[short-unique-id] ${t[0]}`,this.debug===!0&&typeof console!="undefined"&&console!==null)return console.log(...i)};this.setDictionary=(t,i)=>{let e;if(t&&Array.isArray(t)&&t.length>1)e=t;else{e=[];let s;this.dictIndex=s=0;let a=`_${t}_dict_ranges`,o=this[a];Object.keys(o).forEach(c=>{let u=c;for(this.dictRange=o[u],this.lowerBound=this.dictRange[0],this.upperBound=this.dictRange[1],this.dictIndex=s=this.lowerBound;this.lowerBound<=this.upperBound?s<this.upperBound:s>this.upperBound;this.dictIndex=this.lowerBound<=this.upperBound?s+=1:s-=1)e.push(String.fromCharCode(this.dictIndex))})}if(i){let s=.5;e=e.sort(()=>Math.random()-s)}this.dict=e,this.dictLength=this.dict.length,this.counter=0};this.seq=()=>this.sequentialUUID();this.sequentialUUID=()=>{let t,i,e="";t=this.counter;do i=t%this.dictLength,t=Math.trunc(t/this.dictLength),e+=this.dict[i];while(t!==0);return this.counter+=1,e};this.randomUUID=(t=this.uuidLength||d)=>{let i,e,s;if(t===null||typeof t=="undefined"||t<1)throw new Error("Invalid UUID Length Provided");let a=t>=0;for(i="",s=0;s<t;s+=1)e=parseInt((Math.random()*this.dictLength).toFixed(0),10)%this.dictLength,i+=this.dict[e];return i};this.availableUUIDs=(t=this.uuidLength)=>parseFloat(Math.pow([...new Set(this.dict)].length,t).toFixed(0));this.approxMaxBeforeCollision=(t=this.availableUUIDs(this.uuidLength))=>parseFloat(Math.sqrt(Math.PI/2*t).toFixed(20));this.collisionProbability=(t=this.availableUUIDs(this.uuidLength),i=this.uuidLength)=>parseFloat((this.approxMaxBeforeCollision(t)/this.availableUUIDs(i)).toFixed(20));this.uniqueness=(t=this.availableUUIDs(this.uuidLength))=>{let i=parseFloat((1-this.approxMaxBeforeCollision(t)/t).toFixed(20));return i>1?1:i<0?0:i};this.getVersion=()=>this.version;this.stamp=t=>{if(typeof t!="number"||t<10)throw new Error("Param finalLength must be number greater than 10");let i=Math.floor(+new Date/1e3).toString(16),e=t-9,s=Math.round(Math.random()*(e>15?15:e)),a=this.randomUUID(e);return`${a.substr(0,s)}${i}${a.substr(s)}${s.toString(16)}`};this.parseStamp=t=>{if(t.length<10)throw new Error("Stamp length invalid");let i=parseInt(t.substr(t.length-1,1),16);return new Date(parseInt(t.substr(i,8),16)*1e3)};let i=l(l({},q),t);this.counter=0,this.debug=!1,this.dict=[],this.version=b;let{dictionary:e,shuffle:s,length:a}=i;return this.uuidLength=a,this.setDictionary(e,s),this.debug=i.debug,this.log(this.dict),this.log(`Generator instantiated with Dictionary Size ${this.dictLength}`),new Proxy(this,{apply:(o,c,u)=>this.randomUUID(...u)})}},n=p;n.default=p;return y;})();
-'undefined'!=typeof module&&(module.exports=ShortUniqueId.default),'undefined'!=typeof window&&(ShortUniqueId=ShortUniqueId.default);
+var ShortUniqueId = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+  var __export = (target, all) => {
+    __markAsModule(target);
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
 
-function my_function() {
-  var uid = new ShortUniqueId({ dictionary: 'alphanum_lower' });
-  return(uid.randomUUID(6));
+  // src/index.ts
+  var src_exports = {};
+  __export(src_exports, {
+    DEFAULT_UUID_LENGTH: () => DEFAULT_UUID_LENGTH,
+    default: () => ShortUniqueId
+  });
+
+  // package.json
+  var version = "4.4.4";
+
+  // src/index.ts
+  var DEFAULT_UUID_LENGTH = 6;
+  var DEFAULT_OPTIONS = {
+    dictionary: "alphanum",
+    shuffle: true,
+    debug: false,
+    length: DEFAULT_UUID_LENGTH
+  };
+  var _ShortUniqueId = class extends Function {
+    constructor(argOptions = {}) {
+      super();
+      this.dictIndex = 0;
+      this.dictRange = [];
+      this.lowerBound = 0;
+      this.upperBound = 0;
+      this.dictLength = 0;
+      this._digit_first_ascii = 48;
+      this._digit_last_ascii = 58;
+      this._alpha_lower_first_ascii = 97;
+      this._alpha_lower_last_ascii = 123;
+      this._hex_last_ascii = 103;
+      this._alpha_upper_first_ascii = 65;
+      this._alpha_upper_last_ascii = 91;
+      this._number_dict_ranges = {
+        digits: [this._digit_first_ascii, this._digit_last_ascii]
+      };
+      this._alpha_dict_ranges = {
+        lowerCase: [this._alpha_lower_first_ascii, this._alpha_lower_last_ascii],
+        upperCase: [this._alpha_upper_first_ascii, this._alpha_upper_last_ascii]
+      };
+      this._alpha_lower_dict_ranges = {
+        lowerCase: [this._alpha_lower_first_ascii, this._alpha_lower_last_ascii]
+      };
+      this._alpha_upper_dict_ranges = {
+        upperCase: [this._alpha_upper_first_ascii, this._alpha_upper_last_ascii]
+      };
+      this._alphanum_dict_ranges = {
+        digits: [this._digit_first_ascii, this._digit_last_ascii],
+        lowerCase: [this._alpha_lower_first_ascii, this._alpha_lower_last_ascii],
+        upperCase: [this._alpha_upper_first_ascii, this._alpha_upper_last_ascii]
+      };
+      this._alphanum_lower_dict_ranges = {
+        digits: [this._digit_first_ascii, this._digit_last_ascii],
+        lowerCase: [this._alpha_lower_first_ascii, this._alpha_lower_last_ascii]
+      };
+      this._alphanum_upper_dict_ranges = {
+        digits: [this._digit_first_ascii, this._digit_last_ascii],
+        upperCase: [this._alpha_upper_first_ascii, this._alpha_upper_last_ascii]
+      };
+      this._hex_dict_ranges = {
+        decDigits: [this._digit_first_ascii, this._digit_last_ascii],
+        alphaDigits: [this._alpha_lower_first_ascii, this._hex_last_ascii]
+      };
+      this.log = (...args) => {
+        const finalArgs = [...args];
+        finalArgs[0] = `[short-unique-id] ${args[0]}`;
+        if (this.debug === true) {
+          if (typeof console !== "undefined" && console !== null) {
+            return console.log(...finalArgs);
+          }
+        }
+      };
+      this.setDictionary = (dictionary, shuffle) => {
+        let finalDict;
+        if (dictionary && Array.isArray(dictionary) && dictionary.length > 1) {
+          finalDict = dictionary;
+        } else {
+          finalDict = [];
+          let i;
+          this.dictIndex = i = 0;
+          const rangesName = `_${dictionary}_dict_ranges`;
+          const ranges = this[rangesName];
+          Object.keys(ranges).forEach((rangeType) => {
+            const rangeTypeKey = rangeType;
+            this.dictRange = ranges[rangeTypeKey];
+            this.lowerBound = this.dictRange[0];
+            this.upperBound = this.dictRange[1];
+            for (this.dictIndex = i = this.lowerBound; this.lowerBound <= this.upperBound ? i < this.upperBound : i > this.upperBound; this.dictIndex = this.lowerBound <= this.upperBound ? i += 1 : i -= 1) {
+              finalDict.push(String.fromCharCode(this.dictIndex));
+            }
+          });
+        }
+        if (shuffle) {
+          const PROBABILITY = 0.5;
+          finalDict = finalDict.sort(() => Math.random() - PROBABILITY);
+        }
+        this.dict = finalDict;
+        this.dictLength = this.dict.length;
+        this.counter = 0;
+      };
+      this.seq = () => {
+        return this.sequentialUUID();
+      };
+      this.sequentialUUID = () => {
+        let counterDiv;
+        let counterRem;
+        let id = "";
+        counterDiv = this.counter;
+        do {
+          counterRem = counterDiv % this.dictLength;
+          counterDiv = Math.trunc(counterDiv / this.dictLength);
+          id += this.dict[counterRem];
+        } while (counterDiv !== 0);
+        this.counter += 1;
+        return id;
+      };
+      this.randomUUID = (uuidLength = this.uuidLength || DEFAULT_UUID_LENGTH) => {
+        let id;
+        let randomPartIdx;
+        let j;
+        if (uuidLength === null || typeof uuidLength === "undefined" || uuidLength < 1) {
+          throw new Error("Invalid UUID Length Provided");
+        }
+        const isPositive = uuidLength >= 0;
+        id = "";
+        for (j = 0; j < uuidLength; j += 1) {
+          randomPartIdx = parseInt((Math.random() * this.dictLength).toFixed(0), 10) % this.dictLength;
+          id += this.dict[randomPartIdx];
+        }
+        return id;
+      };
+      this.availableUUIDs = (uuidLength = this.uuidLength) => {
+        return parseFloat(Math.pow([...new Set(this.dict)].length, uuidLength).toFixed(0));
+      };
+      this.approxMaxBeforeCollision = (rounds = this.availableUUIDs(this.uuidLength)) => {
+        return parseFloat(Math.sqrt(Math.PI / 2 * rounds).toFixed(20));
+      };
+      this.collisionProbability = (rounds = this.availableUUIDs(this.uuidLength), uuidLength = this.uuidLength) => {
+        return parseFloat((this.approxMaxBeforeCollision(rounds) / this.availableUUIDs(uuidLength)).toFixed(20));
+      };
+      this.uniqueness = (rounds = this.availableUUIDs(this.uuidLength)) => {
+        const score = parseFloat((1 - this.approxMaxBeforeCollision(rounds) / rounds).toFixed(20));
+        return score > 1 ? 1 : score < 0 ? 0 : score;
+      };
+      this.getVersion = () => {
+        return this.version;
+      };
+      this.stamp = (finalLength) => {
+        if (typeof finalLength !== "number" || finalLength < 10) {
+          throw new Error("Param finalLength must be number greater than 10");
+        }
+        const hexStamp = Math.floor(+new Date() / 1e3).toString(16);
+        const idLength = finalLength - 9;
+        const rndIdx = Math.round(Math.random() * (idLength > 15 ? 15 : idLength));
+        const id = this.randomUUID(idLength);
+        return `${id.substr(0, rndIdx)}${hexStamp}${id.substr(rndIdx)}${rndIdx.toString(16)}`;
+      };
+      this.parseStamp = (stamp) => {
+        if (stamp.length < 10) {
+          throw new Error("Stamp length invalid");
+        }
+        const rndIdx = parseInt(stamp.substr(stamp.length - 1, 1), 16);
+        return new Date(parseInt(stamp.substr(rndIdx, 8), 16) * 1e3);
+      };
+      const options = __spreadValues(__spreadValues({}, DEFAULT_OPTIONS), argOptions);
+      this.counter = 0;
+      this.debug = false;
+      this.dict = [];
+      this.version = version;
+      const {
+        dictionary,
+        shuffle,
+        length
+      } = options;
+      this.uuidLength = length;
+      this.setDictionary(dictionary, shuffle);
+      this.debug = options.debug;
+      this.log(this.dict);
+      this.log(`Generator instantiated with Dictionary Size ${this.dictLength}`);
+      return new Proxy(this, {
+        apply: (target, that, args) => this.randomUUID(...args)
+      });
+    }
+  };
+  var ShortUniqueId = _ShortUniqueId;
+  ShortUniqueId.default = _ShortUniqueId;
+  return src_exports;
+})();
+
+function myfunction () {
+  return new ShortUniqueId.default({ dictionary: 'alphanum_lower' })();
 }
-module.exports = my_function;
+module.exports = myfunction;
