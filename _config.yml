@@ -39,6 +39,7 @@ kramdown:
   input: "GFM"
   syntax_highlighter: ""
 jekyll-minifier:
+  exclude: "*.txt"
   preserve_php: true
   remove_spaces_inside_tags: false
   remove_multi_spaces: false
