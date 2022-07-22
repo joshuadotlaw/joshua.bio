@@ -2,7 +2,7 @@
 creation_date: '<% tp.date.now("YYYY-MM-DD HH:MM") %>'
 aliases: ['']
 
-permalink: ''
+permalink: '/<% tp.user.uid() %>'
 published: false
 listed: false
 sitemap: false
