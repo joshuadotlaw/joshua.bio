@@ -10,5 +10,5 @@ title: ''
 description: ''
 list_title:
 publication_date:
-last_modified_at:
+last_modified_at: '<% tp.date.now("YYYY-MM-DD") %>'
 ---
