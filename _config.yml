@@ -14,6 +14,7 @@ exclude:
   - "comments"
   - "logs"
   - "notes"
+  - "scripts"
   - "templates"
   - "Gemfile"
   - "Gemfile.lock"
