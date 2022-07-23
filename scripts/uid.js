@@ -211,6 +211,6 @@ function script () {
     ShortUniqueId.default = _ShortUniqueId;
     return src_exports;
   })();
-  return new ShortUniqueId.default({ dictionary: 'number' }).randomUUID(12);
+  return new ShortUniqueId.default({ dictionary: 'number' }).randomUUID(10);
 }
 module.exports = script;
