@@ -6,9 +6,9 @@ function script(len) {
     dict.push(String.fromCharCode(i));
   }
   for (let j = 0; j < len; j += 1) {
-    let randIdx;
-    randIdx = parseInt((Math.random() * dict.length).toFixed(0),10) % dict.length;
-    id += dict[randIdx];
+    let random_index;
+    random_index = parseInt((Math.random() * dict.length).toFixed(0),10) % dict.length;
+    id += dict[random_index];
   }
   return id;
 }
