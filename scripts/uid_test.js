@@ -1,1 +1,0 @@
-console.log(require('./uid.js')(9));
