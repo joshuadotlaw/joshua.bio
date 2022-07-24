@@ -1,4 +1,4 @@
-function script(len) {
+module.exports = function script(len) {
   let id = "";
   let ascii_range = [48,57];
   let dict = [];
@@ -12,4 +12,3 @@ function script(len) {
   }
   return id;
 }
-module.exports = script;
