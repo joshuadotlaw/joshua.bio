@@ -8,7 +8,7 @@ layout: null
 {% for i in sorted -%}
 <url>
   <loc>{{ i.url | absolute_url }}</loc>
-  <lastmod>{{ i.last_modified_at }}</lastmod>
+  <lastmod>{{ i.last_modified_at | date_to_xmlschema }}</lastmod>
 </url>
 {% endfor -%}
 </urlset>
