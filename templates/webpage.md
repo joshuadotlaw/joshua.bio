@@ -5,8 +5,7 @@ uid: <% uid %>
 aliases: ['']
 permalink: '/<% uid %>'
 published: false
-listed: false
-sitemap: false
+listed: true
 title: ''
 description: ''
 list_title:
