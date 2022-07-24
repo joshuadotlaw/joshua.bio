@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{% if page.sitemap == false -%}
+{% unless page.listed -%}
 <meta name="robots" content="noindex">
-{% endif -%}
+{% endunless -%}
 <link rel="canonical" href="{% if page.homepage %}{{ site.url }}/{% else %}{{ page.url | absolute_url }}{% endif %}">
 <link rel="preload" href="/assets/CascadiaCodePL-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <title>{{ page.title }}</title>
