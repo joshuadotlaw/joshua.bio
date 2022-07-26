@@ -1,6 +1,6 @@
 module.exports = function generate_uid(len) {
   let uid = "";
-  let pool = "013456789cfghjmkqrsvwxyz";
+  let pool = "013456789cfghjmkqrsuvwxyz";
   let unwanted = [
     "69",
     "ss",
