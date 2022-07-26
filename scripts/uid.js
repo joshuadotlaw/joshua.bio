@@ -5,7 +5,7 @@ module.exports = function generate_uid(len) {
     "69","ss","666",
     "s3x","53x","6006s",
     "60065","8008s",
-    "80085","xxx"
+    "80085","xxx","kkk"
   ];
   for (let i = 0; i < len; i += 1) {
     uid += pool[
