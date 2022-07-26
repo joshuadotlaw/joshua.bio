@@ -6,7 +6,7 @@ uid: <% uid %>
 aliases: ['']
 permalink: '/<% uid %>'
 published: false
-listed: true
+listed: false
 title: ''
 description: ''
 publication_date:
