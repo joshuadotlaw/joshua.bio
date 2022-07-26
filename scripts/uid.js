@@ -1,7 +1,7 @@
 module.exports = function script(len) {
-  var id = "";
-  var dict = "013456789cfghjmkqrsvwxyz".split("");
-  var disallowed = ["69","ss","666"];
+  let id = "";
+  let dict = "013456789cfghjmkqrsvwxyz".split("");
+  let disallowed = ["69","ss","666"];
   for (let i = 0; i < len; i += 1) {
     id += dict[parseInt((Math.random() * dict.length).toFixed(0),10) % dict.length];
     if (disallowed.some(v => id.includes(v))) {
@@ -11,3 +11,4 @@ module.exports = function script(len) {
   }
   return id;
 }
+module.exports(7);
