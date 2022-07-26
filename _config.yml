@@ -24,7 +24,7 @@ defaults:
       path: ""
     values:
       layout: "article"
-      listed: true
+      listed: false
 collections:
   pages:
     output: true
