@@ -1,13 +1,18 @@
-module.exports = function script(len) {
-  let id = "";
-  let dict = "013456789cfghjmkqrsvwxyz".split("");
-  let disallowed = ["69","ss","666","s3x","53x","6006s","60065","8008s","80085"];
+module.exports = function generate_uid(len) {
+  let uid = "";
+  let pool = "013456789cfghjmkqrsvwxyz".split("");
+  let unwanted = [
+    "69","ss","666",
+    "s3x","53x","6006s",
+    "60065","8008s",
+    "80085","xxx"
+  ];
   for (let i = 0; i < len; i += 1) {
-    id += dict[parseInt((Math.random() * dict.length).toFixed(0),10) % dict.length];
-    if (disallowed.some(v => id.includes(v))) {
-      id = "";
+    uid += pool[parseInt((Math.random() * pool.length).toFixed(0),10) % pool.length];
+    if (unwanted.some(v => uid.includes(v))) {
+      uid = "";
       i = 0;
     }
   }
-  return id;
+  return uid;
 }
