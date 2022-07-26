@@ -7,7 +7,6 @@ module.exports = function generate_uid(len) {
     "666",
     "s3x",
     "53x",
-    "j3w",
     "717",
     "xxx",
     "kkk",
