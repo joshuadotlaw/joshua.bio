@@ -17,6 +17,12 @@ module.exports = function generate_uid(len) {
     "8008",
     "8006",
     "4114h",
+    "1s14m",
+    "1514m",
+    "j3svs",
+    "j35vs",
+    "j3sv5",
+    "j35v5"
   ];
   pool = pool.split("");
   for (let i = 0; i < len; i += 1) {
@@ -25,9 +31,12 @@ module.exports = function generate_uid(len) {
       .toFixed(0),10) % pool.length
     ];
     if (unwanted.some(v => uid.includes(v))) {
+      console.log("Unwanted substring in " + uid + "...");
+      console.log("Starting over...");
       uid = "";
       i = 0;
     }
   }
+  console.log("uid: " + uid);
   return uid;
 }
