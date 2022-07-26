@@ -11,4 +11,3 @@ module.exports = function script(len) {
   }
   return id;
 }
-module.exports(7);
