@@ -16,6 +16,8 @@ module.exports = function generate_uid(len) {
     "fvq",
     "5uc",
     "suc",
+    "5uk",
+    "suk",
     "sh17",
     "svck",
     "5vck",
