@@ -1,7 +1,6 @@
 */
 .*
-!_*/
 !templates/
 !scripts/
-_site
-_pages
+!_includes
+!_layouts
