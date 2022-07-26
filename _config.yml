@@ -29,6 +29,9 @@ collections:
   pages:
     output: true
     sort_by: 'last_modified_at'
+  notes:
+    output: true
+    sort_by: 'last_modified_at'
 plugins:
   - "jekyll-minifier"
   - "jekyll-wikilinks"
