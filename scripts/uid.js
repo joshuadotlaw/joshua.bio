@@ -1,10 +1,9 @@
 module.exports = function generate_uid(len) {
   let uid = "";
-  let pool = "013456789cfghjmkqrsuvwxyz";
+  let pool = "013456789cfghjmkqrsvwxyz";
   let unwanted = [
     "69",
     "ss",
-    "fu",
     "666",
     "s3x",
     "53x",
@@ -14,10 +13,6 @@ module.exports = function generate_uid(len) {
     "fvk",
     "fvc",
     "fvq",
-    "5uc",
-    "suc",
-    "5uk",
-    "suk",
     "sh17",
     "svck",
     "5vck",
@@ -32,11 +27,7 @@ module.exports = function generate_uid(len) {
     "j3svs",
     "j35vs",
     "j3sv5",
-    "j35v5",
-    "j3sus",
-    "j35us",
-    "j3su5",
-    "j35u5"
+    "j35v5"
   ];
   pool = pool.split("");
   for (let i = 0; i < len; i += 1) {
