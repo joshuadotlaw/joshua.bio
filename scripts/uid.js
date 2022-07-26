@@ -32,7 +32,11 @@ module.exports = function generate_uid(len) {
     "j3svs",
     "j35vs",
     "j3sv5",
-    "j35v5"
+    "j35v5",
+    "j3sus",
+    "j35us",
+    "j3su5",
+    "j35u5"
   ];
   pool = pool.split("");
   for (let i = 0; i < len; i += 1) {
