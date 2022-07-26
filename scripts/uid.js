@@ -30,11 +30,13 @@ module.exports = function generate_uid(len) {
       parseInt((Math.random() * pool.length)
       .toFixed(0),10) % pool.length
     ];
-    if (unwanted.some(v => uid.includes(v))) {
-      console.log("Unwanted substring in " + uid + "...");
-      console.log("Starting over...");
-      uid = "";
-      i = 0;
+    if (uid.length == len) {
+      if (unwanted.some(v => uid.includes(v))) {
+        console.log("Unwanted substring in " + uid);
+        console.log("Starting over...");
+        uid = "";
+        i = 0;
+      }
     }
   }
   console.log("uid: " + uid);
