@@ -1,7 +1,7 @@
 ---
 <%*
     let filename = tp.file.title;
-    let alias = filename;
+    let title = filename;
     let uid = await tp.user.uid(7);
     if (filename.includes("Untitled")) {
       filename = uid;
