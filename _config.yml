@@ -35,11 +35,14 @@ collections:
 plugins:
   - "jekyll-minifier"
   - "jekyll-wikilinks"
+  - "jekyll-redirect-from"
 markdown: "kramdown"
 highlighter: ""
 kramdown:
   input: "GFM"
   syntax_highlighter: ""
+redirect_from:
+  json: false
 jekyll-minifier:
   exclude: "*.txt"
   preserve_php: true
