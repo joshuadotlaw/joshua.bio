@@ -1,0 +1,40 @@
+---
+layout: base
+---
+<header>
+  <nav aria-label="primary-navigation">
+    <p>
+        {{-''-}}<strong><a href="/">{{ site.name }}</a></strong>
+        {{-' '-}}<a href="/pages">pages</a>
+        {{-' '-}}<a href="/now">now</a>
+        {{-''-}}
+    </p>
+  </nav>
+</header>
+<main>
+  {{ content }}
+</main>
+<footer>
+  <hr />
+  <nav aria-label="footer-navigation">
+    <p>
+        {{-''-}}
+        {%- unless page.permalink == "/" -%}
+        <a href="/">Home</a>{{-' • '-}}
+        {%- endunless -%}
+        {%- unless page.permalink == "/pages" -%}
+        <a href="/pages">Pages</a>{{-' • '-}}
+        {%- endunless -%}
+        {%- unless page.permalink == "/now" -%}
+        <a href="/now">Now</a>{{-' • '-}}
+        {%- endunless -%}
+        <a href="/feed.xml">RSS</a>
+        {{-''-}}
+    </p>
+    <p>
+      {{-''-}}
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      {{-''-}}
+    </p>
+  </nav>
+</footer>
