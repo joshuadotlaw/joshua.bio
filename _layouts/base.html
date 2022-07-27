@@ -8,6 +8,7 @@
 {% endunless -%}
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="preload" href="/assets/CascadiaCodePL-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/highlight.min.js" as="script" type="text/javascript">
 <title>{{ page.title }}</title>
 <script type="application/ld+json">
 {
@@ -97,5 +98,6 @@
     </p>
   </nav>
 </footer>
+<script src="/assets/highlight.min.js" defer></script>
 </body>
 </html>

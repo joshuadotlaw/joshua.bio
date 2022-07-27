@@ -1,22 +1,23 @@
 <style>
 /*!
 
-Use of the Cascadia Code PL Font Software is subject to
-the following copyright notice and license.
+  Use of the Cascadia Code PL Font Software is subject to
+  the following copyright notice and license.
 
-Copyright (c) 2019 - Present, Microsoft Corporation, with
-Reserved Font Name Cascadia Code. Licensed under the SIL
-Open Font License, Version 1.1, as stated in the URL below.
+  Copyright (c) 2019 - Present, Microsoft Corporation, with
+  Reserved Font Name Cascadia Code. Licensed under the SIL
+  Open Font License, Version 1.1, as stated in the URL below.
 
-https://github.com/microsoft/cascadia-code/blob/main/LICENSE
+  https://github.com/microsoft/cascadia-code/blob/main/LICENSE
 
 */
   :root {
     --a: #005aff; /* "vivid blue" */
     --bg: #fff;
-    --bg-alt: #e9ecef; /* https://yeun.github.io/open-color/ */
+    --bg-code: #0d1117;
     --fg: #212529; /* https://yeun.github.io/open-color/ */
     --fg-alt: #d92680; /* https://github.com/chrisgrieser/shimmering-focus */
+    --fg-code: #c9d1d9;
     --h: var(--fg);
 
     --h1: 2em;
@@ -83,10 +84,9 @@ https://github.com/microsoft/cascadia-code/blob/main/LICENSE
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --a: #42b5ff;
-      --bg: #000;
-      --bg-alt: #343a40;
-      --fg: #dee2e6; /* https://yeun.github.io/open-color/ */
+      --a: #268bd2;
+      --bg: #002b36;
+      --fg: #93a1a1; /* https://yeun.github.io/open-color/ */
       --fg-alt: #f15594; /* https://github.com/chrisgrieser/shimmering-focus */
     }
   }
@@ -194,17 +194,24 @@ https://github.com/microsoft/cascadia-code/blob/main/LICENSE
     top: -0.6em;
   }
   pre {
-    background: var(--bg-alt);
+    background: var(--bg-code);
     border-radius: 0.5rem;
     margin-block: 1rem;
     overflow-x: auto;
     white-space: pre;
     word-wrap: normal;
   }
+  pre, code {
+    font-family: var(--mono);
+    font-size: var(--code);
+  }
   pre > code {
-    color: var(--fg);
+    color: var(--fg-code);
     display: block;
     padding: 1rem;
+  }
+  p > code {
+    color: var(--fg-alt);
   }
 
   a, a:visited {
@@ -216,11 +223,6 @@ https://github.com/microsoft/cascadia-code/blob/main/LICENSE
   }
   small {
     font-size: var(--small);
-  }
-  code, pre {
-    color: var(--fg-alt);
-    font-family: var(--mono);
-    font-size: var(--code);
   }
   strong {
     /* v1.1.0 https://github.com/sindresorhus/modern-normalize */
@@ -278,5 +280,123 @@ https://github.com/microsoft/cascadia-code/blob/main/LICENSE
   footer hr:after {
     content: ":::";
     top: -0.65em;
+  }
+
+/*!
+
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
+
+*/
+  .hljs {
+    color: #c9d1d9;
+    background: #0d1117;
+  }
+
+  .hljs-doctag,
+  .hljs-keyword,
+  .hljs-meta .hljs-keyword,
+  .hljs-template-tag,
+  .hljs-template-variable,
+  .hljs-type,
+  .hljs-variable.language_ {
+    /* prettylights-syntax-keyword */
+    color: #ff7b72;
+  }
+
+  .hljs-title,
+  .hljs-title.class_,
+  .hljs-title.class_.inherited__,
+  .hljs-title.function_ {
+    /* prettylights-syntax-entity */
+    color: #d2a8ff;
+  }
+
+  .hljs-attr,
+  .hljs-attribute,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-operator,
+  .hljs-variable,
+  .hljs-selector-attr,
+  .hljs-selector-class,
+  .hljs-selector-id {
+    /* prettylights-syntax-constant */
+    color: #79c0ff;
+  }
+
+  .hljs-regexp,
+  .hljs-string,
+  .hljs-meta .hljs-string {
+    /* prettylights-syntax-string */
+    color: #a5d6ff;
+  }
+
+  .hljs-built_in,
+  .hljs-symbol {
+    /* prettylights-syntax-variable */
+    color: #ffa657;
+  }
+
+  .hljs-comment,
+  .hljs-code,
+  .hljs-formula {
+    /* prettylights-syntax-comment */
+    color: #8b949e;
+  }
+
+  .hljs-name,
+  .hljs-quote,
+  .hljs-selector-tag,
+  .hljs-selector-pseudo {
+    /* prettylights-syntax-entity-tag */
+    color: #7ee787;
+  }
+
+  .hljs-subst {
+    /* prettylights-syntax-storage-modifier-import */
+    color: #c9d1d9;
+  }
+
+  .hljs-section {
+    /* prettylights-syntax-markup-heading */
+    color: #1f6feb;
+    font-weight: bold;
+  }
+
+  .hljs-bullet {
+    /* prettylights-syntax-markup-list */
+    color: #f2cc60;
+  }
+
+  .hljs-emphasis {
+    /* prettylights-syntax-markup-italic */
+    color: #c9d1d9;
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    /* prettylights-syntax-markup-bold */
+    color: #c9d1d9;
+    font-weight: bold;
+  }
+
+  .hljs-addition {
+    /* prettylights-syntax-markup-inserted */
+    color: #aff5b4;
+    background-color: #033a16;
+  }
+
+  .hljs-deletion {
+    /* prettylights-syntax-markup-deleted */
+    color: #ffdcd7;
+    background-color: #67060c;
   }
 </style>
