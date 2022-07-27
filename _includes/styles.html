@@ -18,7 +18,6 @@
     --fg: #212529; /* https://yeun.github.io/open-color/ */
     --fg-alt: #d92680; /* https://github.com/chrisgrieser/shimmering-focus */
     --fg-code: #c9d1d9;
-    --h: var(--fg);
 
     --rem: 19px;
     --code: 16px;
@@ -164,19 +163,16 @@
     padding-left: var(--left-margin);
   }
   h1 {
-    color: var(--h);
     font-size: var(--h1);
     margin-block-start: var(--h1-block-start);
     margin-block-end: var(--h1-block-end);
   }
   h2 {
-    color: var(--h);
     font-size: var(--h2);
     margin-block-start: var(--h2-block-start);
     margin-block-end: var(--h2-block-end);
   }
   h3, h4, h5, h6 {
-    color: var(--h);
     font-size: var(--h3);
     margin-block-start: var(--h3-block-start);
     margin-block-end: var(--h3-block-end);
@@ -207,17 +203,20 @@
     white-space: pre;
     word-wrap: normal;
   }
-  pre, code {
-    font-family: var(--mono);
+  code {
+    color: var(--fg-alt);
+  }
+  p code {
     font-size: var(--code);
+  }
+  pre {
+    font-family: var(--mono);
   }
   pre > code {
     color: var(--fg-code);
     display: block;
+    font-size: var(--code);
     padding: 1rem;
-  }
-  p > code {
-    color: var(--fg-alt);
   }
 
   a, a:visited {
