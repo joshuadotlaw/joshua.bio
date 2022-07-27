@@ -20,20 +20,26 @@
     --fg-code: #c9d1d9;
     --h: var(--fg);
 
-    --h1: 2em;
-    --h2: 1.6em;
-    --h3: 1.2em;
     --rem: 19px;
     --code: 16px;
     --small: 16px;
 
-    --text-width: 34rem;
+    --h1: 2.2em;
+    --h2: 1.6em;
+    --h3: 1.2em;
+    --h1-block-start: 6rem;
+    --h2-block-start: 3rem;
+    --h3-block-start: 3rem;
+    --h1-block-end: 2rem;
+    --h2-block-end: 1.5rem;
+    --h3-block-end: 1.0rem;
 
     --left-margin: 1rem;
     --right-margin: 1rem;
     --nav-margin: 3rem;
-    --h1-margin: 6rem;
     --floor-margin: 9rem;
+
+    --text-width: 34rem;
 
     --serif:
     ui-serif,
@@ -92,14 +98,14 @@
   }
   @media (min-width: 720px) {
     :root {
-      --left-margin: 36px;
-      --right-margin: 36px;
+      --left-margin: 2rem;
+      --right-margin: 2rem;
     }
   }
   @media (min-width: 792px) {
     :root {
-      --left-margin: 72px;
-      --right-margin: 72px;
+      --left-margin: 4rem;
+      --right-margin: 4rem;
     }
   }
 
@@ -160,20 +166,20 @@
   h1 {
     color: var(--h);
     font-size: var(--h1);
-    margin-block-end: 1rem;
-    margin-block-start: var(--h1-margin);
+    margin-block-start: var(--h1-block-start);
+    margin-block-end: var(--h1-block-end);
   }
   h2 {
     color: var(--h);
     font-size: var(--h2);
-    margin-block-end: 1rem;
-    margin-block-start: 3rem;
+    margin-block-start: var(--h2-block-start);
+    margin-block-end: var(--h2-block-end);
   }
   h3, h4, h5, h6 {
     color: var(--h);
     font-size: var(--h3);
-    margin-block-end: 1rem;
-    margin-block-start: 2rem;
+    margin-block-start: var(--h3-block-start);
+    margin-block-end: var(--h3-block-end);
   }
   hr {
     border: none;
@@ -245,7 +251,7 @@
   }
 
   header {
-    margin-bottom: var(--h1-margin);
+    margin-bottom: var(--h1-block-start);
     margin-top: var(--nav-margin);
   }
   header nav p > a:not(:first-child) {
