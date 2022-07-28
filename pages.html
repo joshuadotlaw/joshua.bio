@@ -8,6 +8,7 @@ description: 'A listing of pages, sorted by most recent update'
 list_title:
 publication_date: '2022-07-10'
 last_modified_at: '2022-07-10'
+redirect_from: ['/blog']
 ---
 <h1>Pages</h1>
 {% assign sorted = site.pages | where:'listed',true | sort:'last_modified_at' | reverse -%}
